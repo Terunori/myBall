@@ -7,11 +7,15 @@ void ofApp::setup(){
     ofSetCircleResolution(32);
     ofEnableAlphaBlending();
     ofSetFrameRate(60);
+    
+    // set
+    myBall.setSpeed(ofPoint(15,10));
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    myBall.setSpeed(myBall.getSpeed()+ofPoint(0,5));
+    myBall.update();
 }
 
 //--------------------------------------------------------------

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Ball.hpp"
+#include "Ball2.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -22,6 +23,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-//    make instance myBall
-    Ball myBall;
+    //    make instance myBall
+    // vector <Ball> balls;
+    vector <Ball2> balls;
 };

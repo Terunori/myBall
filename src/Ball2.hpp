@@ -6,9 +6,35 @@
 //
 //
 
-#ifndef Ball2_hpp
-#define Ball2_hpp
+// include guard
+#pragma once
 
-#include <stdio.h>
+#include "ofMain.h"
 
-#endif /* Ball2_hpp */
+class Ball2 {
+private:
+    // property
+    ofPoint pos;
+    ofPoint speed;
+    float radius;
+    int dirX, dirY;
+    float phase;
+    float phaseSpeed;
+    float strechedRadius;
+    
+public:
+    // Constructor
+    Ball2();
+    // define method
+    // draw circle
+    void draw();
+    // update
+    void update();
+    // setter,getter
+    void setRadius(float radius);
+    float getRadius();
+    void setPos(ofPoint);
+    ofPoint getPos();
+    void setSpeed(ofPoint);
+    ofPoint getSpeed();
+};

@@ -23,10 +23,10 @@ Ball2::Ball2(){
 void Ball2::draw(){
     //draw circle1
     ofSetColor(31,63,255, 100);
-    ofCircle(pos.x, pos.y, strechedRadius);
+    ofDrawCircle(pos.x, pos.y, strechedRadius);
     //draw circle2
     ofSetColor(255, 0, 0, 200);
-    ofCircle(pos.x, pos.y, radius/15);
+    ofDrawCircle(pos.x, pos.y, radius/15);
 }
 
 // update

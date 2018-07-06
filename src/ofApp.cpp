@@ -1,5 +1,8 @@
 #include "ofApp.h"
 
+int red, green, blue;
+float loc_x, loc_y;
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 //    setting background
@@ -10,6 +13,11 @@ void ofApp::setup(){
     
     // set
     // myBall.setSpeed(ofPoint(15,10));
+    red = 31;
+    green = 63;
+    blue = 255;
+    //loc_x = ofGetWidth()/2;
+    //loc_y = ofGetHeight()/2;
 }
 
 //--------------------------------------------------------------
@@ -25,6 +33,8 @@ void ofApp::draw(){
     for (int i=0; i<balls.size(); i++) {
         balls[i].draw();
     }
+    ofSetColor(red,green,blue);
+    ofDrawTriangle(loc_x, loc_y, loc_x, loc_y+50, loc_x+20, loc_y+40);
 }
 
 //--------------------------------------------------------------
@@ -45,17 +55,21 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    loc_x=x;
+    loc_y=y;
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    loc_x=x;
+    loc_y=y;
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    red = 127;
+    green = 127;
+    blue = 127;
 }
 
 //--------------------------------------------------------------
@@ -68,7 +82,7 @@ void ofApp::mouseReleased(int x, int y, int button){
         // set pos
         b.setPos(ofPoint(mouseX,mouseY));
         b.setRadius(ofRandom(100,200));
-        b.setSpeed((ofPoint(ofRandom(-15,15),0)));
+        b.setSpeed((ofPoint(ofRandom(5,15),0)));
         // add instance made into vector balls
         balls.push_back(b);
     } else {
@@ -100,6 +114,10 @@ void ofApp::mouseReleased(int x, int y, int button){
             }
         }
     }
+    
+    red = 31;
+    green = 63;
+    blue = 255;
 
 }
 
